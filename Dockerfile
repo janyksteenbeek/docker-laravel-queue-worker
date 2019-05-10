@@ -11,7 +11,7 @@ ENV LARAVEL_HORIZON=false
 
 # Install pdo if you want to use database queue and install supervisor
 RUN docker-php-ext-install pdo pdo_mysql pcntl posix soap tokenizer json intl xml mbstring  \
-	&& apk add --update supervisor && rm -rf /tmp/* /var/cache/apk/*
+	&& apk add --update supervisor libxml2-dev && rm -rf /tmp/* /var/cache/apk/*
 
 # Define working directory
 WORKDIR /etc/supervisor/conf.d
